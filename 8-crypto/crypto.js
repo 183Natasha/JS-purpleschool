@@ -14,27 +14,20 @@
 
 
 
-function crypto(password){
-    let pass = password.split("");  
-    let length = pass.length;
-    pass.unshift(pass[length]);
-    pass.pop(pass.unshift(pass[length]));
-    return (pass.join(''));
+function crypto(originalPassword){
+    return originalPassword.split('').reverse().join('');
 }
 
-function check(password, password2){
-    let pass2 = password2.split("");
-    let element = pass2.shift();
-    pass2.push(element);
-    pass2 = pass2.join('');
-    if (password == pass2){
-        console.log("true");
-    } else{
-        console.log("false");
+
+function check(originalPassword, encryptPassword) {
+    if(!originalPassword || !encryptPassword) {
+        console.log (false);
     }
-}
+    console.log (originalPassword === crypto(encryptPassword) )
+ }
 
-let password = "Natasha"; 
-let password2 = crypto(password);
+let originalPassword = "роза упала на лапу азора"; 
+let encryptPassword = crypto(originalPassword);
+console.log(encryptPassword);
 
-check(password, password2);
+check(originalPassword, encryptPassword);
