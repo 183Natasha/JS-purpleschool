@@ -55,11 +55,15 @@ const newTask = {
 }
 
 
-const getTaskByIdNew = ToDoList.getTaskById.bind(newTask);
 const addTaskNew = ToDoList.addTask.bind(newTask);
 const deleteIDNew = ToDoList.deleteID.bind(newTask);
 const sortPriorityNew = ToDoList.sortPriority.bind(newTask);
 const sortIDNew = ToDoList.sortID.bind(newTask);
 
-addTaskNew
+addTaskNew("Выпить витамины", 6);
+addTaskNew("Позвонить маме", 2);
+addTaskNew("Купить абрикосы", 6);
 
+deleteIDNew(2)
+console.log(newTask.tasks)
+console.log('---')
